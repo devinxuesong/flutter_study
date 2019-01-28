@@ -1,0 +1,39 @@
+编译release 版本：flutter run --release
+
+报错
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':winmuplugin:verifyReleaseResources'.
+> java.util.concurrent.ExecutionException: com.android.builder.internal.aapt.v2.Aapt2Exception: Android resource linking failed
+  Output:  F:\workProject\project\flutter_desmo\winmuapp\build\winmuplugin\intermediates\aapt_friendly_merged_manifests\release\processReleaseManifest\aapt\AndroidManifest.xml:36: error: resource mipmap/ic_launcher (aka com.winmu
+.winmuplugin:mipmap/ic_launcher) not found.
+  error: failed processing manifest.
+
+  Command: C:\Users\dell\.gradle\caches\transforms-1\files-1.1\aapt2-3.2.1-4818971-windows.jar\cae8ad16491a2022da1e227938be931c\aapt2-3.2.1-4818971-windows\aapt2.exe link -I\
+          C:\Users\dell\AppData\Local\Android\Sdk\platforms\android-27\android.jar\
+          --manifest\
+          F:\workProject\project\flutter_desmo\winmuapp\build\winmuplugin\intermediates\aapt_friendly_merged_manifests\release\processReleaseManifest\aapt\AndroidManifest.xml\
+          -o\
+          C:\Users\dell\AppData\Local\Temp\aapt-5142316507660663672-out\
+          -R\
+          F:\workProject\project\flutter_desmo\winmuapp\build\winmuplugin\intermediates\res\compiled\release\layout_activity_two.xml.flat\
+          --auto-add-overlay\
+          --non-final-ids\
+          -0\
+          apk\
+          --no-version-vectors
+  Daemon:  AAPT2 aapt2-3.2.1-4818971-windows Daemon #0
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output. Run with --scan to get full insights.
+
+* Get more help at https://help.gradle.org
+
+BUILD FAILED in 8s
+Gradle task 'assembleRelease'... Done                        9.0s
+Gradle task assembleRelease failed with exit code 1
+
+
+首先copy一份res文件到plugin里面，结果：
+成功
